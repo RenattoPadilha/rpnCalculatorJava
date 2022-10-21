@@ -1,10 +1,10 @@
 import java.util.Stack;
 import java.io.*;
 
-public class Main {
+public class Task1 {
     public static void main(String args[]) throws Exception{
         
-      File exprRPN = new File("teste.txt");
+      File exprRPN = new File("Task_1/teste.txt");
       Stack<Double> stack = new Stack<Double>();
       BufferedReader br = new BufferedReader(new FileReader(exprRPN));
       
