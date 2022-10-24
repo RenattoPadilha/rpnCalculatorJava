@@ -20,39 +20,34 @@ public class Task2 {
 
     File exprRPN = new File("Task_2/teste.txt");
     Stack<Double> stack = new Stack<Double>();
-    List<Token> listaToken = new ArrayList<>();
+    List<Token2> listaToken = new ArrayList<>();
     BufferedReader br = new BufferedReader(new FileReader(exprRPN));
 
     boolean error = false;
     String valorAtual;
-    Token token;
+    Token2 token;
 
     while ((valorAtual = br.readLine()) != null) {
       //isNumber
       if (isNumeric(valorAtual)){
-        token = new Token(TokenType.NUM, valorAtual);
+        token = new Token2(TokenType2.NUM, valorAtual);
         listaToken.add(token);
       //analisando operando *
       } else if (valorAtual.equals("*")) {
-        token = new Token(TokenType.STAR, valorAtual);
+        token = new Token2(TokenType2.STAR, valorAtual);
         listaToken.add(token);
         //analisando operando /
       } else if (valorAtual.equals("/")) {
-        token = new Token(TokenType.SLASH, valorAtual);
+        token = new Token2(TokenType2.SLASH, valorAtual);
         listaToken.add(token);
         //analisando operando +
       } else if (valorAtual.equals("+")) {
-        token = new Token(TokenType.PLUS, valorAtual);
+        token = new Token2(TokenType2.PLUS, valorAtual);
         listaToken.add(token);
         //analisando operando -
       } else if (valorAtual.equals("-")) {
-        token = new Token(TokenType.MINUS, valorAtual);
+        token = new Token2(TokenType2.MINUS, valorAtual);
         listaToken.add(token);
-        /*analisando operando ^
-      } else if (valorAtual.equals("^")) {
-        token = new Token(TokenType.EOF, valorAtual);
-        listaToken.add(token);
-        //erro*/
       } else {
         error = true;
         System.err.println("Unexpected character: '" + valorAtual + "'");

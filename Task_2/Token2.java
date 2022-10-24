@@ -17,14 +17,18 @@
 /**
  * @author Henrique Rebelo
  */
-public enum TokenType {
+public class Token2 {
 
-	// Literals.
-	NUM,
+	public final TokenType2 type; // token type
+	public final String lexeme; // token value
 
-	// Single-character tokens for operations.
-	MINUS, PLUS, SLASH, STAR,
-	
-	EOF
+	public Token2 (TokenType2 type, String value) {
+		this.type = type;
+		this.lexeme = value;
+	}
 
+	@Override
+	public String toString() {
+		return "Token [type=" + this.type + ", lexeme=" + this.lexeme + "]";
+	}
 }
